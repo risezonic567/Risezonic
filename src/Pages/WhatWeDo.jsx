@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import NavForOther from "../components/NavForOther";
 import Testimonial from "../components/Testimonial";
-import WhatwedoIMg from "../../src/assets/images/Whatwedo/what we do.png";
+// import WhatwedoIMg from "../../src/assets/images/Whatwedo/what we do.png";
 import whatwedo from "../assets/images/Aboutus/whatwedo.webp";
 import OurServices from "../components/OurServices";
 
