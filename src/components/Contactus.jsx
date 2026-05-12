@@ -5,17 +5,18 @@ export default function Contactus() {
   return (
     <>
       <div
-        className="lg:flex justify-center items-center bg-cover bg-center bg-no-repeat py-6 bg-fixed space-x-6"
+        className="lg:flex justify-center items-center bg-cover bg-center bg-no-repeat py-6  gap-6"
         style={{
           // backgroundImage: `url(${"src/assets/images/Home/service-bg.jpg"})`,
           backgroundImage: `url(${bgimage})`,
+
         }}
       >
-        <form className="bg-white bg-opacity-80 p-8 rounded-lg shadow-md w-full max-w-md">
+        <form className="bg-white bg-opacity-80 p-6 rounded-lg shadow-md w-full max-w-md">
           <h2 className="text-2xl font-bold mb-6 text-center font-heading">
             Get A Free Quote
           </h2>
-          <div className="flex justify-between space-x-2 font-body">
+          <div className="flex  justify-between space-x-2 font-body">
             <div className="mb-4">
               <label className="block text-gray-700 mb-2" htmlFor="name">
                 Name
@@ -90,7 +91,7 @@ export default function Contactus() {
               className="w-full px-3 py-2 border rounded focus:outline-none focus:ring"
               id="message"
               name="message"
-              rows="4"
+              rowa="2"
               placeholder="Your Message"
               required
             ></textarea>

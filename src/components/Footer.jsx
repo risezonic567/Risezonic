@@ -61,19 +61,19 @@ const Footer = () => {
             <NavLink to="/" className="hover:text-white">
               <li>Home</li>
             </NavLink>
-            <NavLink to="/about" className="hover:text-white">
+            <NavLink to="/about-us" className="hover:text-white">
               <li>About</li>
             </NavLink>
-            <NavLink to="/services" className="hover:text-white">
+            <NavLink to="/our-services" className="hover:text-white">
               <li>Services</li>
             </NavLink>
-            <NavLink to="/career" className="hover:text-white">
+            {/* <NavLink to="/career" className="hover:text-white">
               <li>Career</li>
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/blogs" className="hover:text-white">
               <li>Blog</li>
             </NavLink>
-            <NavLink to="/ai-risezonic" className="hover:text-white">
+            <NavLink to="https://ai.risezonic.com/" className="hover:text-white">
               <li>AI Risezonic</li>
             </NavLink>
             <NavLink to="/privacy-policy" className="hover:text-white">
