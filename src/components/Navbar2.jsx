@@ -98,6 +98,18 @@ export default function Navbar2() {
               </li>
               <li>
                 <Link
+                  to="/package"
+                  className={`text-lg hover:text-amber-400 ${
+                    isActive("/package")
+                      ? "text-amber-400 font-semibold"
+                      : ""
+                  }`}
+                >
+                  Packages
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/our-services"
                   className={`text-lg hover:text-amber-400 ${
                     isActive("/our-services")
@@ -195,6 +207,20 @@ export default function Navbar2() {
                 What We do
               </Link>
             </li>
+
+           <li>
+                <Link
+                  to="/package"
+                  className={`text-lg hover:text-amber-400 ${
+                    isActive("/package")
+                      ? "text-amber-400 font-semibold"
+                      : ""
+                  }`}
+                >
+                  Packages
+                </Link>
+              </li>
+            
             <li className="flex items-center gap-2">
               <FaServicestack />
               <Link
@@ -228,7 +254,7 @@ export default function Navbar2() {
                 Contact
               </Link>
             </li>
-            {/* <li className="flex items-center gap-2">
+            <li className="flex items-center gap-2">
               <RiGalleryFill />
               <Link
                 to="/gallery"
@@ -236,7 +262,7 @@ export default function Navbar2() {
               >
                 Gallery
               </Link>
-            </li> */}
+            </li>
             {/* <li className="flex items-center gap-2">
               <FaNewspaper />
               <Link

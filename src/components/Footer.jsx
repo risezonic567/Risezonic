@@ -73,6 +73,9 @@ const Footer = () => {
             <NavLink to="/blogs" className="hover:text-white">
               <li>Blog</li>
             </NavLink>
+            <NavLink to="/package" className="hover:text-white">
+              <li>Package</li>
+            </NavLink>
             <NavLink to="https://ai.risezonic.com/" className="hover:text-white">
               <li>AI Risezonic</li>
             </NavLink>

@@ -94,6 +94,11 @@ export default function Navbar() {
                   Services
                 </a>
               </li>
+               <li>
+                <a href="#" className="hover:text-gray-300 text-lg">
+                  Package
+                </a>
+              </li>
               <li>
                 <a href="#" className="hover:text-gray-300 text-lg">
                   Contact
@@ -148,6 +153,12 @@ export default function Navbar() {
               <FaServicestack />
               <a href="#" className="block hover:text-gray-300 text-lg">
                 Services
+              </a>
+            </li>
+              <li className="flex items-center gap-2">
+              <FaServicestack />
+              <a href="#" className="block hover:text-gray-300 text-lg">
+                Package
               </a>
             </li>
             <li className="flex items-center gap-2">

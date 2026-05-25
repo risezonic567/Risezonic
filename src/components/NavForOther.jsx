@@ -15,6 +15,7 @@ import {
   FaNewspaper,
   FaLock,
   FaInstalod,
+  FaBox,
 } from "react-icons/fa";
 import { FaCircleQuestion } from "react-icons/fa6";
 import { useLocation } from "react-router-dom";
@@ -93,6 +94,18 @@ export default function NavForOther() {
                   }`}
                 >
                   What We Do
+                </Link>
+              </li>
+               <li>
+                <Link
+                  to="/package"
+                  className={`text-lg hover:text-amber-400 ${
+                    isActive("/package")
+                      ? "text-amber-400 font-semibold"
+                      : ""
+                  }`}
+                >
+                  Package
                 </Link>
               </li>
               <li>
@@ -197,6 +210,15 @@ export default function NavForOther() {
                 className="block hover:text-amber-600 text-lg"
               >
                 What We do
+              </Link>
+            </li>
+             <li className="flex items-center gap-2">
+              <FaBox />
+              <Link
+                to="/package"
+                className="block hover:text-amber-600 text-lg"
+              >
+                Package
               </Link>
             </li>
             <li className="flex items-center gap-2">

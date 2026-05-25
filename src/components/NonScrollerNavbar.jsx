@@ -54,6 +54,18 @@ export default function NonScrollerNavbar() {
                   What We Do
                 </Link>
               </li>
+               <li>
+                <Link
+                  to="/package"
+                  className={`text-lg hover:text-amber-400 ${
+                    isActive("/package")
+                      ? "text-amber-400 font-semibold"
+                      : ""
+                  }`}
+                >
+                  Package
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/our-services"
