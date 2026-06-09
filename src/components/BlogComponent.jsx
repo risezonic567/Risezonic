@@ -22,8 +22,8 @@ const BlogComponent = () => {
     <section className="bg-gradient-to-b from-blue-100 to-white py-12">
       <div className="max-w-7xl mx-auto px-4 justify-between items-center sm:flex block">
         <div className="w-2/4 border-r-4 border-gray-200 mr-2">
-          <h2 className="text-8xl font-bold text-start text-gray-800 mb-10 font-heading">
-            <span className="text-primary"> Latest </span> <br /> Blog <br />
+          <h2 className="md:text-8xl text-5xl font-bold text-start text-gray-800 mb-10 font-heading">
+            <span className="text-primary"> Latest </span> <br /> Blog 
             <span className="text-secondary"> Posts</span>
             <span className="text-secondary">...</span>
           </h2>

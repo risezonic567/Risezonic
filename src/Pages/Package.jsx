@@ -61,7 +61,7 @@ export default function Package() {
 
         <div className="text-center mb-16">
 
-          <p className="text-red-600 font-semibold text-lg">
+          <p className="text-amber-600 font-semibold text-lg">
             Custom  Plans Available
           </p>
 
