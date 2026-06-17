@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+
 
 const faqs = [
   {
@@ -31,13 +33,17 @@ const FAQ = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 py-20 ">
+    <div className="max-w-4xl mx-auto p-6 py-20 ">
       <h2 className="text-3xl font-bold text-center mb-6 font-heading">
         Frequently Asked Questions
       </h2>
-      <div className="space-y-4">
+      <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}  
+      className="space-y-4">
         {faqs.map((faq, index) => (
-          <div key={index} className="border border-gray-200 rounded-xl p-4 ">
+          <div key={index} className="border border-gray-200 rounded-xl p-6 ">
             <button
               className="w-full text-left flex justify-between items-center font-medium text-lg font-heading"
               onClick={() => toggleFAQ(index)}
@@ -50,7 +56,7 @@ const FAQ = () => {
             )}
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

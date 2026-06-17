@@ -96,48 +96,85 @@ export default function Services() {
 
       <NavForOther />
 
-      <section
-        className="bg-center bg-cover bg-fixed py-12"
-        style={{
-          backgroundImage: "url('/assets/services/counter-bg.jpg')", // ✅ Move images to /public/assets
-        }}
-      >
-        <div className="pt-28 max-w-7xl mx-auto">
-          <div className="flex justify-center py-8 text-center bg-primary text-white rounded-xl">
-            <h1 className="font-heading sm:text-5xl text-2xl ">
-              Top Digital Marketing Services
-            </h1>
-          </div>
+    <section
+  className="relative bg-center bg-cover bg-fixed py-20 overflow-hidden"
+  style={{
+    backgroundImage: "url('/assets/services/counter-bg.jpg')",
+  }}
+>
+  <div className="absolute inset-0 bg-black/70"></div>
 
-          {loading ? (
-            <div className="max-w-7xl flex justify-center items-center py-20">
-              <Loader />
+  <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/20 blur-3xl rounded-full"></div>
+  <div className="absolute bottom-10 right-10 w-80 h-80 bg-primary/20 blur-3xl rounded-full"></div>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4">
+    
+    <div className="flex justify-center mb-16 pt-10">
+      <div className="bg-white/10 backdrop-blur-lg border  border-white/20 px-8 py-6 rounded-2xl text-center shadow-2xl">
+        <h1 className="font-heading sm:text-5xl text-3xl text-white leading-tight">
+          Top Digital Marketing Services
+        </h1>
+
+        <p className="text-white/80 font-body pt-4 max-w-2xl mx-auto">
+          Grow your business with result-driven marketing strategies,
+          SEO, social media campaigns, paid ads, and branding solutions.
+        </p>
+      </div>
+    </div>
+
+    {loading ? (
+      <div className="max-w-7xl flex justify-center items-center py-20">
+        <Loader />
+      </div>
+    ) : (
+      <div className="grid lg:grid-cols-2 gap-8">
+        {services
+          .filter((service) => service.isActive)
+          .map((service, index) => (
+            <div
+              key={index}
+              className="group relative bg-white/95 backdrop-blur-md border border-white/20 rounded-3xl shadow-xl p-8 overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)]"
+            >
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-cover bg-center"
+                style={{
+                  backgroundImage:
+                    "url('https://i.postimg.cc/G2nbVSbQ/Banner-1-green.jpg')",
+                }}
+              ></div>
+
+              <div className="relative z-10">
+                
+                <span className="text-6xl font-bold text-primary/10 group-hover:text-white/20 absolute top-0 right-4">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <h2 className="text-3xl font-heading text-primary group-hover:text-black transition duration-300">
+                  {service.title}
+                </h2>
+
+                <div className="w-20 h-1 bg-secondary rounded-full mt-4 mb-6 group-hover:bg-primary"></div>
+
+                <p className="font-body text-gray-700 leading-7 line-clamp-4 group-hover:text-black transition duration-300">
+                  {service.shortdescription}
+                </p>
+
+                <Link
+                  to={`/our-services/${encodeURIComponent(service.url)}`}
+                  className="inline-flex items-center gap-2 bg-secondary text-white px-6 py-3 rounded-full mt-8 font-medium hover:bg-primary transition duration-300"
+                >
+                  Read More
+                  <span className="group-hover:translate-x-1 transition duration-300">
+                    →
+                  </span>
+                </Link>
+              </div>
             </div>
-          ) : (
-            <div className="flex flex-wrap justify-evenly p-6 gap-8">
-              {services
-                .filter((service) => service.isActive)
-                .map((service, index) => (
-                  <div
-                    key={index}
-                    className="w-[530px] bg-white border-2 rounded-lg shadow-lg p-4 hover:bg-[url('https://i.postimg.cc/G2nbVSbQ/Banner-1-green.jpg')] transition-all duration-300 hover:-translate-y-2 hover:text-black hover:bg-cover hover:bg-center"
-                  >
-                    <h2 className="text-4xl font-heading">{service.title}</h2>
-                    <p className="pt-8 font-body line-clamp-5">
-                      {service.shortdescription}
-                    </p>
-                    <Link
-                      to={`/our-services/${encodeURIComponent(service.url)}`}
-                      className="bg-secondary text-white px-4 py-2 rounded-md mt-4 inline-block"
-                    >
-                      Read More
-                    </Link>
-                  </div>
-                ))}
-            </div>
-          )}
-        </div>
-      </section>
+          ))}
+      </div>
+    )}
+  </div>
+</section>
     </>
   );
 }

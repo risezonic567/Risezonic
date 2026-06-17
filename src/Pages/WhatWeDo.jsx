@@ -7,7 +7,23 @@ import whatwedo from "../assets/images/Aboutus/whatwedo.webp";
 import OurServices from "../components/OurServices";
 
 import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
 export default function WhatWeDo() {
+  const fadeUp = {
+    hidden: {
+      opacity: 0,
+      y: 60,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+      },
+    },
+  };
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -24,18 +40,36 @@ export default function WhatWeDo() {
       </Helmet>
       <NavForOther />
 
-      <section className="max-w-7xl flex justify-center mx-auto pt-32">
+      <section className="max-w-7xl flex justify-center overflow-hidden mx-auto pt-32">
         <div className="md:flex block md:justify-between justify-center  md:h-screen items-center">
           <div className="md:h-100 w-full flex justify-center text-center ">
             <article>
               <section className="md:h-[35rem] flex justify-center text-start items-center p-6">
-                <div className="relative">
-                  <h1 className="text-6xl font-heading text-primary">
+                <motion.div
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="relative"
+                >
+                  <motion.h1
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="text-6xl font-heading text-primary"
+                  >
                     <span className="text-black md:text-8xl"> What</span> We Do
-                  </h1>
-                  <span className="text-amber-600 text-4xl font-semibold absolute md:top-16 top-8 left-0 right-0 bottom-0 inset-0">
+                  </motion.h1>
+                  <motion.span
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    transition={{ duration: 1 }}
+                    viewport={{ once: true }}
+                    className="block text-amber-600 text-4xl font-semibold"
+                  >
                     _____________________
-                  </span>
+                  </motion.span>
                   <h3 className="md:pt-8 pt-6 font-body text-sm italic font-semibold">
                     We create winning digital solutions using our strategy,
                     creative thinking and precise methods. Because we are a
@@ -43,7 +77,13 @@ export default function WhatWeDo() {
                     strengthen businesses’ presence online and achieve
                     successful measurable results.
                   </h3>
-                  <p className="md:pt-8 pt-2 font-body">
+                  <motion.p
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="md:pt-8 pt-2 font-body leading-relaxed"
+                  >
                     Everything we do in brand positioning, performance
                     marketing, SEO, content creation and data-driven campaigns
                     is focused on what your business aims to achieve. We are not
@@ -54,8 +94,14 @@ export default function WhatWeDo() {
                     services which help your company’s voice be noticed online.
                     At Risezonic, our team ensures that new concepts are put
                     into action for success.
-                  </p>
-                  <p className="md:pt-8 pt-2 font-body">
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="md:pt-8 pt-2 font-body leading-relaxed"
+                  >
                     Today, where every online connection is important, we help
                     you achieve this by creating advantageous online
                     experiences. Whether it is the site design or every single
@@ -65,12 +111,19 @@ export default function WhatWeDo() {
                     systems that help attract new users, garner interest, and
                     boost sales. Ensuring that your brand’s value is visible
                     online is the main task we aim to achieve.
-                  </p>
-                </div>
+                  </motion.p>
+                </motion.div>
               </section>
             </article>
           </div>
-          <div className="md:h-100 w-full  overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, x: 40 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.03 }}
+            className="md:h-100 w-full overflow-hidden rounded-3xl"
+          >
             <img
               loading="lazy"
               className="bg-contain bg-center h-full w-full"
@@ -79,9 +132,9 @@ export default function WhatWeDo() {
               src="https://raw.githubusercontent.com/Ashish-Kaintura/risezonic2025-/main/src/assets/images/Whatwedo/what%20we%20do.png"
               alt="Plan & Create"
             />
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </section >
 
       <section className="max-w-7xl flex justify-center mx-auto">
         <div className="md:flex block md:justify-between justify-center  md:h-screen items-center ">
@@ -98,15 +151,32 @@ export default function WhatWeDo() {
           <div className="md:h-100 w-full flex justify-center text-center  ">
             <article>
               <section className=" md:h-[35rem] flex justify-center text-start items-center p-6">
-                <div className="relative">
-                  <h2 className="text-4xl font-heading text-primary">
+                <motion.div
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="relative"
+                >
+                  <motion.h2
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="text-4xl font-heading text-primary"
+                  >
                     <span className="text-black md:text-6xl"> Our </span>{" "}
                     Digital Philosophy
-                  </h2>
+                  </motion.h2>
                   <span className="text-amber-600 text-4xl font-semibold absolute md:top-10 top-12 left-0 right-0 bottom-0 inset-0">
                     _____________________
                   </span>
-                  <h3 className="md:pt-8 pt-6 font-body text-sm italic font-semibold">
+                  <motion.h3
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3, duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="md:pt-8 pt-6 font-body text-sm italic font-semibold"
+                  >
                     Our aim is to show the idea that digital is human in all we
                     do. This is why our goals are to alter people’s moods,
                     encourage them through hard times, and allow them to connect
@@ -115,8 +185,14 @@ export default function WhatWeDo() {
                     to address. So this process makes it possible for us to
                     pinpoint what makes your brand unique, regardless of being a
                     business or lifestyle brand.
-                  </h3>
-                  <p className="md:pt-8 pt-2 font-body">
+                  </motion.h3>
+                  <motion.p
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.6, duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="md:pt-8 pt-2 font-body"
+                  >
                     Making the product expand is an important aspect we consider
                     from the beginning. The process of launching a business or
                     expanding your share in the market becomes simple with the
@@ -132,8 +208,8 @@ export default function WhatWeDo() {
                     communication process goes on, being constantly checked and
                     improved. We remain alert for new changes, so your brand
                     stays ahead of the rivals.
-                  </p>
-                </div>
+                  </motion.p>
+                </motion.div>
               </section>
             </article>
           </div>
@@ -160,7 +236,13 @@ export default function WhatWeDo() {
               _____________________
             </span>
 
-            <h3 className="font-body text-sm italic font-semibold mb-4">
+            <motion.h3
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="font-body text-sm italic font-semibold mb-4"
+            >
               Our success is based on your business success. Selecting Risezonic
               gives you clear information among all today's data noise. Being
               open, keeping everyone updated, and using a smart approach that
@@ -169,9 +251,15 @@ export default function WhatWeDo() {
               studying user actions, and paying attention to our competitors.
               It’s clear that trust develops over time and only real
               achievements can prove it.
-            </h3>
+            </motion.h3>
 
-            <p className="font-body mb-4">
+            <motion.p
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="font-body mb-4"
+            >
               We are dedicated to helping you accomplish your aims. We see each
               project from the point of view of a team member, not as a simple
               contractor. That is why we join you in your victories, face your
@@ -185,15 +273,21 @@ export default function WhatWeDo() {
               experience resonate and do well. While sharing our thoughts,
               measuring our progress, and trusting each other, we continue to
               work as partners.
-            </p>
+            </motion.p>
 
-            <p className="font-body">
+            <motion.p
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.9, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="font-body"
+            >
               By looking forward, we let you build results-based business
               strategies. Our mission is to help digital skills improve your
               results in real life. We can do more than campaign marketing, as
               we help you build systems that grow and bring better results for
               your business. That is how we function.
-            </p>
+            </motion.p>
           </div>
 
           {/* RIGHT IMAGE */}
