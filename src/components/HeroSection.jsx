@@ -23,7 +23,7 @@ const HeroSection = () => {
           </p>
           <h2 className="text-4xl font-bold text-gray-900 leading-snug mb-4">
             Streamlined Digital Marketing <br />
-            Services for br Growing Businesses
+            Services for Growing Businesses
           </h2>
           <p className="text-gray-600 mb-6">
             At Risezonic, we are a Top digital marketing Agency in Delhi NCR,
