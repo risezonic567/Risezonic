@@ -111,8 +111,7 @@ export default function Home() {
         className="md:h-[920px] h-[350px] bg-center bg-cover bg-no-repeat relative md:flex hidden overflow-hidden"
         style={{
           backgroundImage: `url(${"https://i.postimg.cc/G2nbVSbQ/Banner-1-green.jpg"})`,
-        }}
-      >
+        }}>
         <article className="absolute top-1/2 -translate-y-1/2 right-10 flex items-center justify-center z-10 w-[90%]">
           <section>
             <h1 className="text-5xl lg:text-7xl xl:text-8xl font-semibold font-heading leading-tight">
@@ -188,9 +187,9 @@ export default function Home() {
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-3xl lg:text-4xl xl:text-6xl font-semibold font-heading leading-tight"
+        className="text-3xl lg:text-3xl xl:text-5xl font-semibold font-heading leading-tight"
       >
-        Best Digital Marketing Agency
+        Digital Marketing That Drives<br/> Real Business Growth
         <br />
 
         <motion.span
@@ -199,9 +198,20 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.3 }}
           className="text-4xl lg:text-6xl xl:text-5xl font-semibold text-secondary mt-1 pt-1 font-heading block"
         >
-         Top Agency in Delhi NCR
+         We are a leading digital marketing agency
         </motion.span>
       </motion.h1>
+
+       <motion.p
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="mt-2 pt-4 font-semibold font-body text-sm lg:text-base max-w-5xl leading-relaxed select-none"
+      >
+       Risezonic helps businesses increase visibility, generate qualified leads, and grow revenue through SEO, PPC, social media marketing, web development, and performance-driven digital strategies.
+
+     
+      </motion.p>
 
       <motion.p
         initial={{ opacity: 0, y: 60 }}
@@ -238,7 +248,8 @@ export default function Home() {
                     to="/about-us"
                     className="font-semibold text-white"
                   >
-                    More Details
+                    View Our Services
+
                   </Link>
 
                 </div>
@@ -257,7 +268,7 @@ export default function Home() {
                     to="tel:+91 97111 10975"
                     className="font-semibold text-white"
                   >
-                    Call Now
+                    Get Free Consultation
                   </Link>
 
                 </div>
