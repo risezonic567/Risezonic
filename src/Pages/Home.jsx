@@ -188,18 +188,18 @@ export default function Home() {
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-5xl lg:text-7xl xl:text-8xl font-semibold font-heading leading-tight"
+        className="text-3xl lg:text-4xl xl:text-6xl font-semibold font-heading leading-tight"
       >
-        Best Digital Marketing
+        Best Digital Marketing Agency
         <br />
 
         <motion.span
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-4xl lg:text-6xl xl:text-7xl font-semibold text-secondary mt-1 pt-1 font-heading block"
+          className="text-4xl lg:text-6xl xl:text-5xl font-semibold text-secondary mt-1 pt-1 font-heading block"
         >
-          Agency in Delhi NCR
+         Top Agency in Delhi NCR
         </motion.span>
       </motion.h1>
 

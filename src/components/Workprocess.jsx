@@ -121,7 +121,7 @@ export default function Workprocess() {
                 <div className="relative p-4">
 
                   <h2 className="text-3xl md:text-4xl font-heading text-primary">
-                    Develop & testing
+                    Development & Testing
                   </h2>
 
                   <span className="text-amber-600 text-3xl md:text-4xl font-semibold absolute top-4 left-0 right-0 bottom-0 inset-0">
@@ -175,7 +175,7 @@ export default function Workprocess() {
                     the last stage is a delivered and deployed project. The
                     project is now completely launched, so you can access your
                     website or app just like anyone else can. Then we can
-                    provide support and monitoring so your project runs at it's
+                    provide support and monitoring so your project runs at its
                     best. You can run your business and we'll handle the tedious
                     technical issues.
                   </p>

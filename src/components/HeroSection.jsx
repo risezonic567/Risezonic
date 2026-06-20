@@ -20,19 +20,18 @@ const HeroSection = () => {
         {/* Right Content */}
         <div className="w-full md:w-1/2">
           <p className="text-amber-600 font-medium text-lg mb-2">
-            We Provide digital marketing solution that works
+            We provide digital marketing solutions that work.
           </p>
           <h2 className="text-4xl font-bold text-gray-900 leading-snug mb-4">
             Streamlined Digital Marketing <br />
-            Services for br Growing Businesses
+            Services for Growing Businesses
           </h2>
           <p className="text-gray-600 mb-6">
             At Risezonic, we are a Top digital marketing Agency in Delhi NCR,
             India, that is focused on data-driven tailored support for startups
             and evolving businesses, One that combines creativity and utilizing
             data to create unique and impactful SEO, social media and
-            performance marketing campaigns. The built campaign is will be
-            optimized in a timely manner with the expectation of providing you
+            performance marketing campaigns. Each campaign is continuously optimized to improve performance and maximize return on investment. in a timely manner with the expectation of providing you
             maximum return on investment, progressing sustainable growth.
             Risezonic provides trustworthy digital solutions for businesses that
             are looking to scale either locally or globally that are designed to
