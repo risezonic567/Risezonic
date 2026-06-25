@@ -185,11 +185,11 @@ export default function About() {
                     viewport={{ once: true }}
                     className="md:pt-8 pt-4 font-body text-sm md:text-base leading-relaxed text-gray-600 select-none"
                   >
-                   Risezonic is a results-driven digital marketing and web development agency dedicated to helping businesses to establish a strong online presence and achieve sustainable growth.
+                   Risezonic is a results-driven digital marketing and web development agency dedicated to helping businesses to establish a strong online presence and achieve sustainable growth.<br/><br/>
 
-Our mission is simple: Deliver innovative digital solutions that help our clients attract more customers, increase revenue, and stay ahead of the competition.
+                  Our mission is simple: Deliver innovative digital solutions that help our clients attract more customers, increase revenue, and stay ahead of the competition.<br/><br/>
 
-We combine creativity, technology, and data-driven strategies to create marketing campaigns that generate measurable results.
+                  We combine creativity, technology, and data-driven strategies to create marketing campaigns that generate measurable results.
 
                   </motion.p>
 
