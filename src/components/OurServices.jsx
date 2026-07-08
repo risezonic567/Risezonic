@@ -1,30 +1,30 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 
 const OurServices = () => {
-  const [services, setService] = useState([]);
-  const fetchdata = "/data/services.json";
+  const [services, setService] = useState([])
+  const fetchdata = "/data/services.json"
 
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await fetch(fetchdata);
+        const response = await fetch(fetchdata)
 
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Network response was not ok")
         }
 
-        const data = await response.json();
-        setService(data);
+        const data = await response.json()
+        setService(data)
 
       } catch (error) {
-        console.error("Failed to fetch services:", error);
+        console.error("Failed to fetch services:", error)
       }
-    };
+    }
 
-    fetchServices();
-  }, []);
+    fetchServices()
+  }, [])
 
   return (
     <section className="py-12 px-4">
@@ -35,7 +35,7 @@ const OurServices = () => {
 
           {services
             .filter((service) => service.isActive)
-            .slice(0, 8)
+            .slice(0, 10)
             .map((service, idx) => (
 
               <motion.div
@@ -90,7 +90,7 @@ const OurServices = () => {
       </div>
 
     </section>
-  );
-};
+  )
+}
 
-export default OurServices;
+export default OurServices

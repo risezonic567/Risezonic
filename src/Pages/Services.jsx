@@ -1,29 +1,29 @@
-import React, { useEffect, useState } from "react";
-import NavForOther from "../components/NavForOther";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
-import Loader from "../components/Loader";
+import React, { useEffect, useState } from "react"
+import NavForOther from "../components/NavForOther"
+import { Link } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
+import Loader from "../components/Loader"
 
 export default function Services() {
-  const [services, setServices] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [services, setServices] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
 
     // ✅ Use correct path for public folder JSON
     // Place your `services.json` inside `public/data/services.json`
     fetch("/data/services.json")
       .then((res) => res.json())
       .then((data) => {
-        setServices(data);
-        setLoading(false);
+        setServices(data)
+        setLoading(false)
       })
       .catch((err) => {
-        console.error("Failed to fetch services:", err);
-        setLoading(false);
-      });
-  }, []);
+        console.error("Failed to fetch services:", err)
+        setLoading(false)
+      })
+  }, [])
 
   return (
     <>
@@ -176,5 +176,5 @@ export default function Services() {
   </div>
 </section>
     </>
-  );
+  )
 }
