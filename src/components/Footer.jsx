@@ -78,6 +78,7 @@ const Footer = () => {
                 { name: "Blogs", path: "/blogs" },
                 { name: "Packages", path: "/package" },
                 { name: "Privacy Policy", path: "/privacy-policy" },
+                { name: "Term & Condition", path: "/term-condition" }
               ].map((item, index) => (
                 <li key={index}>
                   <NavLink

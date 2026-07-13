@@ -245,7 +245,7 @@ export default function Home() {
                 <div className="flex gap-2 items-center">
                   
                   <Link
-                    to="/about-us"
+                    to="/our-services"
                     className="font-semibold text-white"
                   >
                     View Our Services

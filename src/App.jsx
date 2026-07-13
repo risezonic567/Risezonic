@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import WhatsAppSticky from "./components/WhatsappSticky";
 import Loader from "./Pages/Loader";
+import TermConditions from "./components/TermConditions";
 
 // Lazy load pages
 const Home = lazy(() => import("./Pages/Home"));
@@ -22,6 +23,8 @@ const PrivacyPolicy = lazy(() => import("./Pages/PrivacyPolicy"));
 const MediaPage = lazy(() => import("./Pages/MediaPage"));
 const WhatWeDo = lazy(() => import("./Pages/WhatWeDo"));
 const DailyNewsPage = lazy(() => import("./Pages/DailyNews"));
+
+
 
 function App() {
   useEffect(() => {
@@ -55,6 +58,8 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/newsandmedia" element={<MediaPage />} />
           <Route path="/dailynewspage" element={<DailyNewsPage />} />
+          <Route path="/term-condition" element={<TermConditions />} />
+
         </Routes>
       </Suspense>
       <WhatsAppSticky />

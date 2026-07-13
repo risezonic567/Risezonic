@@ -3,6 +3,7 @@ import NavForOther from "../components/NavForOther";
 import Navbar2 from '../components/Navbar2';
 import { packages } from '../data/packages'
 import PackageCard from "../components/PackageCard";
+import { Link } from 'react-router-dom';
 
 export default function Package() {
 
@@ -33,7 +34,7 @@ export default function Package() {
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-5">
 
           <h1 className="text-5xl md:text-7xl font-bold">
-             Pricing Plans
+            Pricing Plans
           </h1>
 
           <p className="mt-5 text-lg max-w-2xl">
@@ -41,10 +42,10 @@ export default function Package() {
           </p>
 
           <a
-            href="https://wa.me/919711110975"
+            href="https://wa.me/+919711110975"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-green-600 hover:bg-green-700 transition-all duration-300 px-8 py-4 rounded-2xl mt-10 text-lg font-semibold"
+            className="bg-green-600 hover:bg-green-700 transition-all duration-300 px-8 py-4 rounded-2xl mt-10 text-lg font-semibold inline-block"
           >
             Chat on WhatsApp
           </a>

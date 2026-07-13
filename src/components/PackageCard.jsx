@@ -36,9 +36,11 @@ export default function PackageCard({ item }) {
 
       </div>
 
-      <Link to="https://wa.me/+91 97111 10975" className=" bg-yellow-600 text-white px-4 py-3 rounded-2xl mt-14 inline-block hover:bg-yellow-700 transition-all duration-300">
+      <a   href="https://wa.me/+919711110975"
+            target="_blank"
+            rel="noopener noreferrer" className=" bg-yellow-600 text-white px-4 py-3 rounded-2xl mt-14 inline-block hover:bg-yellow-700 transition-all duration-300">
         Get Started
-      </Link>
+      </a>
 
     </div>
   );
