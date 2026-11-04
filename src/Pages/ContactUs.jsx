@@ -60,8 +60,7 @@ const ContactUs = () => {
           {/* Hero text */}
           <div className="py-6 relative text-center max-w-4xl">
             <h2 className="text-center font-heading p-2 text-2xl sm:text-3xl lg:text-4xl text-white mb-4">
-              {/* Coffee or Chai? <span className="text-primary">It's on us!</span> */}
-              Coffee or Tea? <span className="text-primary">It's on us!</span>
+              Coffee or Chai? <span className="text-primary">It's on us!</span>
             </h2>
 
             {/* Decorative line - hidden on mobile for better readability */}
