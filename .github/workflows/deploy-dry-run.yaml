@@ -1,0 +1,75 @@
+# Risezonic.com — FTP DRY RUN only (NO files uploaded to live server)
+# Trigger: GitHub → Actions → "Risezonic FTP Dry Run" → Run workflow
+#
+# BEFORE running: fill REPLACE_* values below + add GitHub secret FTP_PASSWORD
+# See comments at bottom of this file for where to get each value from cPanel.
+
+name: Risezonic FTP Dry Run
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ftp-dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: NPM INSTALL
+        run: npm ci
+
+      - name: BUILD REACT APP
+        run: npm run build
+
+      - name: FTP dry-run (lists changes, does NOT upload)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          # --- FILL THESE (do not put password here) ---
+          server: ftp.risezonic.com
+          username: deployrisezonic.com@risezonic.com
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: dist/
+          # Path on server where site files live (must end with /)
+          # Examples: public_html/   OR   /   (if FTP user home IS the site root)
+          server-dir: /
+          dry-run: true
+          dangerous-clean-slate: false
+          log-level: verbose
+          security: loose
+
+# ============================================================
+# WHERE TO GET VALUES (cPanel) — fill REPLACE_* then commit
+# ============================================================
+# 1) FTP_HOST
+#    cPanel → Files → FTP Accounts → "FTP Server" / "FTP Host"
+#    Often: ftp.risezonic.com  OR  server IP  OR  domain
+#    Same idea as Malani's server field (IP or hostname)
+#
+# 2) FTP_USERNAME
+#    cPanel → FTP Accounts → create a deploy user OR use existing
+#    Full username often looks like: deploy@risezonic.com  OR  cpaneluser
+#    Prefer a dedicated deploy account limited to the site folder (safer)
+#
+# 3) FTP_PASSWORD  (GitHub Secret — NOT in this file)
+#    Repo → Settings → Secrets and variables → Actions → New repository secret
+#    Name exactly: FTP_PASSWORD
+#    Value: that FTP account password
+#
+# 4) SERVER_DIR  (MOST IMPORTANT for prod safety)
+#    cPanel → File Manager → open the folder that currently has index.html for www.risezonic.com
+#    If FTP user lands INSIDE that folder already → use: /
+#    If FTP user lands in home and site is in public_html → use: public_html/
+#    If subdomain/addon path → use that exact folder path ending with /
+#    WRONG server-dir can target another site — double-check with File Manager first
+#
+# 5) After dry-run log looks correct (right files under right path):
+#    Use deploy.yaml (still dry-run until you flip the flag) — see that file

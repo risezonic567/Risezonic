@@ -1,0 +1,53 @@
+# Risezonic.com — FTP deploy
+#
+# SAFETY: dry-run is TRUE and push-to-main is DISABLED until you confirm dry-run.
+# After a successful dry-run Actions log:
+#   1) Set dry-run: false
+#   2) Uncomment the "push:" block below
+#   3) Commit + push once to enable live auto-deploy
+#
+# Fill REPLACE_* same as deploy-dry-run.yaml. Password = GitHub secret FTP_PASSWORD only.
+
+name: Risezonic FTP Deploy
+
+on:
+  workflow_dispatch:
+  # DISABLED until dry-run is verified — then uncomment:
+  # push:
+  #   branches:
+  #     - main
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: NPM INSTALL
+        run: npm ci
+
+      - name: BUILD REACT APP
+        run: npm run build
+
+      - name: Deploy by FTP (check dry-run flag!)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.risezonic.com
+          username: deployrisezonic.com@risezonic.com
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: dist/
+          server-dir: /
+          # KEEP true until dry-run Actions log is verified on live path
+          dry-run: true
+          dangerous-clean-slate: false
+          log-level: standard
+          security: loose
