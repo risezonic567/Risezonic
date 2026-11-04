@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import Workprocess1 from "../assets/images/Home/workplan.jpg";
-import Workprocess2 from "../assets/images/Home/Workprocess2.jpg";
-import Workprocess3 from "../assets/images/Home/Workprocess3.jpg";
+import Workprocess2 from "../assets/images/Home/workprocess2.jpg";
+import Workprocess3 from "../assets/images/Home/workprocess3.jpg";
 
 export default function Workprocess() {
   return (
