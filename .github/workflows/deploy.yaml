@@ -46,8 +46,22 @@ jobs:
           port: 21
           local-dir: dist/
           server-dir: /
-          # KEEP true until dry-run Actions log is verified on live path
+          # KEEP true until exclude dry-run is verified — then set false + uncomment push
           dry-run: true
           dangerous-clean-slate: false
           log-level: standard
           security: loose
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/node_modules/**/.*
+            dist/**
+            dist.zip
+            **/*.zip
+            images/**
+            blogImages/**
+            video/**
+            .well-known/**
+            .ftpquota
+            .htaccess.phpupgrader*

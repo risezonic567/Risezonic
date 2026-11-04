@@ -38,13 +38,27 @@ jobs:
           protocol: ftps
           port: 21
           local-dir: dist/
-          # Path on server where site files live (must end with /)
-          # Examples: public_html/   OR   /   (if FTP user home IS the site root)
+          # FTP user home = public_html → server-dir is /
           server-dir: /
           dry-run: true
           dangerous-clean-slate: false
           log-level: verbose
           security: loose
+          # Keep defaults + protect server-only leftovers (not in Vite dist)
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/node_modules/**/.*
+            dist/**
+            dist.zip
+            **/*.zip
+            images/**
+            blogImages/**
+            video/**
+            .well-known/**
+            .ftpquota
+            .htaccess.phpupgrader*
 
 # ============================================================
 # WHERE TO GET VALUES (cPanel) — fill REPLACE_* then commit
