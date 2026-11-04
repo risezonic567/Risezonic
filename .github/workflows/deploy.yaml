@@ -1,21 +1,13 @@
-# Risezonic.com — FTP deploy
-#
-# SAFETY: dry-run is TRUE and push-to-main is DISABLED until you confirm dry-run.
-# After a successful dry-run Actions log:
-#   1) Set dry-run: false
-#   2) Uncomment the "push:" block below
-#   3) Commit + push once to enable live auto-deploy
-#
-# Fill REPLACE_* same as deploy-dry-run.yaml. Password = GitHub secret FTP_PASSWORD only.
+# Risezonic.com — FTP deploy (LIVE)
+# Password = GitHub secret FTP_PASSWORD only.
 
 name: Risezonic FTP Deploy
 
 on:
   workflow_dispatch:
-  # DISABLED until dry-run is verified — then uncomment:
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
 
 jobs:
   ftp-deploy:
@@ -46,8 +38,7 @@ jobs:
           port: 21
           local-dir: dist/
           server-dir: /
-          # KEEP true until exclude dry-run is verified — then set false + uncomment push
-          dry-run: true
+          dry-run: false
           dangerous-clean-slate: false
           log-level: standard
           security: loose

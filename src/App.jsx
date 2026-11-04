@@ -60,6 +60,7 @@ function App() {
           <Route path="/dailynewspage" element={<DailyNewsPage />} />
           <Route path="/term-condition" element={<TermConditions />} />
 
+
         </Routes>
       </Suspense>
       <WhatsAppSticky />
